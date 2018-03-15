@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray_white"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/top" />
+    <TextView
+        android:id="@+id/upload_remind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="温馨提示：资料提交的越完善，越便于审核"
+        android:padding="4dp"
+        android:background="#fff7d1"
+        android:drawableStart="@drawable/ic_warning"
+        android:textColor="#f2d747"
+        android:gravity="center_vertical"
+        android:drawablePadding="4dp"
+        android:visibility="gone"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/upload_expandable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

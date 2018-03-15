@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ProgressButton">
+        <attr name="pb_progress_width" format="dimension"/>
+        <attr name="pb_progress_height" format="dimension"/>
+        <attr name="pb_progress_text_size" format="integer"/>
+        <attr name="pb_progress_text_color" format="color|reference"/>
+        <attr name="pb_progress_text" format="string"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="RectXView">
+        <attr name="isLine" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="TextView">
+        <attr name="key" format="string" />
+        <attr name="value" format="string" />
+        <attr name="value_f" format="string" />
+    </declare-styleable>
+
+
+</resources>

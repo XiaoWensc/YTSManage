@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/design_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="100dp"
+    android:fitsSystemWindows="true"
+    app:behavior_peekHeight="1dp"
+    app:behavior_hideable="false"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    android:background="#ffffff">
+
+
+    <LinearLayout
+        android:id="@+id/frame_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout style="@style/newFormStyle_container">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="所在城市" />
+
+            <LinearLayout style="@style/newFormStyle_content_container">
+
+                <TextView
+                    android:id="@+id/sqCity"
+                    style="@style/newFormStyle_content"
+                    android:tag="sqCity"
+                    android:text="选择城市" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_xiala" />
+            </LinearLayout>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="店铺名称" />
+
+            <EditText
+                android:singleLine="true"
+                android:maxLines="1"
+                android:id="@+id/shopName"
+                style="@style/newFormStyle_content"
+                android:hint="必填"
+                android:maxLength="8"
+                android:tag="shopName" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="店铺地址" />
+
+            <EditText
+                android:inputType="textMultiLine"
+                android:id="@+id/addres"
+                style="@style/newFormStyle_content"
+                android:hint="必填"
+                android:maxLength="50"
+                android:tag="addres" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="店主姓名" />
+
+            <EditText
+                android:id="@+id/name"
+                style="@style/newFormStyle_content"
+                android:hint="必填"
+                android:tag="name" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="联系方式" />
+
+            <EditText
+                android:id="@+id/phone"
+                style="@style/newFormStyle_content"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:tag="phone" />
+
+            <View style="@style/commonDivider_vertical" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnLock"
+            style="@style/newFormStyle_container">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="获取地址" />
+
+            <TextView
+                android:id="@+id/btnGetLock"
+                style="@style/newFormStyle_content"
+                android:drawableRight="@drawable/ic_location_text"
+                android:hint="点击右边按钮获取当前地址" />
+
+            <View style="@style/commonDivider_vertical" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/newFormStyle_content_container"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="附件"
+                android:textColor="@color/gray_dark"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/uploadImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_sld_prmr_rd_cn"
+                android:paddingBottom="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="3dp"
+                android:text="去上传"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fujian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"></LinearLayout>
+
+        <Button
+            android:id="@+id/btnCommit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_sld_prmr_ccl_cn"
+            android:text="提\t\t交"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

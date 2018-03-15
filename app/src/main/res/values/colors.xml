@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3a92ff </color>
+    <color name="colorPrimaryDark">#255ca1</color>
+    <color name="colorAccent">#67a5d6</color>
+
+
+    <color name="text1">#3a92ff</color>
+    <color name="text2">#333333</color>
+
+    <color name="yt_red">#FF2F2F</color>
+    <color name="yt_red1">#FF3A3A</color>
+    <color name="yt_red_light">#FF5d5d</color>
+    <color name="yt_gray">#646464</color>
+    <color name="yt_gray_light">#DEDEDE</color>
+    <color name="yt_green_light">#2DCFB2</color>
+    <color name="yt_blue_light">#95D0FD</color>
+    <color name="yt_red2">#FF3B3B</color>
+</resources>

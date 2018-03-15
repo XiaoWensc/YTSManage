@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">小超商家管理</string>
+
+
+    <!-- ActionBar按钮 -->
+    <string name="action_about">提交</string>
+    <string name="action_search">搜索</string>
+    <string name="action_setting">设置</string>
+    <string name="action_favrate">收藏</string>
+    <string name="action_share">分享</string>
+    <string name="action_submit">保存</string>
+    <string name="action_add">+ 添加</string>
+    <string name="action_edit">编辑</string>
+    <!-- ActionBar按钮 结束-->
+
+    <!--时间选择器-->
+    <string name="cancle">取消</string>
+    <string name="title">请选择时间</string>
+    <string name="commit">确定</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+
+
+</resources>

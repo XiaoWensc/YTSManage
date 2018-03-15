@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_join_biao"
+            android:gravity="center"
+            android:paddingBottom="4dp"
+            android:text="基础信息"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+            <TextView
+                android:id="@+id/tv_shopName"
+                style="@style/newFormStyle_label"
+                android:text="店铺名称" />
+
+            <EditText
+                android:id="@+id/shopName"
+                style="@style/newFormStyle_content"
+                android:layout_height="wrap_content"
+                android:maxLength="8"
+                android:minHeight="40dp"
+                android:tag="shopName" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="所在城市" />
+
+            <LinearLayout style="@style/newFormStyle_content_container">
+
+                <TextView
+                    android:id="@+id/sqCity"
+                    style="@style/newFormStyle_content"
+                    android:tag="provinceName!shopCityName!countyName!shopStreetName"
+                    android:text="选择城市" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_join_xiala" />
+            </LinearLayout>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="详细地址" />
+
+            <EditText
+                android:id="@+id/addres"
+                style="@style/newFormStyle_content"
+                android:layout_height="wrap_content"
+                android:hint="请填写"
+                android:inputType="textMultiLine"
+                android:maxLength="50"
+                android:minHeight="40dp"
+                android:tag="shopAddress" />
+
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="是否新开店铺" />
+
+            <asuper.yt.cn.supermarket.views.RadioGroup
+                android:id="@+id/newkGroup"
+                style="@style/newFormStyle_content_container"
+                android:checkedButton="@+id/newkNo"
+                android:tag="isNewOpen">
+
+                <TextView
+                    style="@style/newFormStyle_content"
+                    android:text=" " />
+
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/newkYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="新开店铺"
+                    android:textColor="#8f8f8f"
+                    custom:key="isNewOpen"
+                    custom:value="true" />
+
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/newkNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="成熟店铺"
+                    android:textColor="#8f8f8f"
+                    custom:key="isNewOpen"
+                    custom:value="false" />
+            </asuper.yt.cn.supermarket.views.RadioGroup>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="是否是连锁店" />
+            <asuper.yt.cn.supermarket.views.RadioGroup
+                android:id="@+id/shopIsChainshop"
+                style="@style/newFormStyle_content_container"
+                android:checkedButton="@+id/liansNo"
+                android:tag="shopIsChainshop">
+                <TextView
+                    style="@style/newFormStyle_content"
+                    android:text=" " />
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/liansYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="是"
+                    android:textColor="#8f8f8f"
+                    custom:key="shopIsChainshop"
+                    custom:value="true" />
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/liansNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="否"
+                    android:textColor="#8f8f8f"
+                    custom:key="shopIsChainshop"
+                    custom:value="false" />
+            </asuper.yt.cn.supermarket.views.RadioGroup>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/shopChainCountView"
+            style="@style/newFormStyle_container.join"
+            android:tag="nocheck"
+            android:visibility="gone">
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="连锁数量" />
+            <EditText
+                android:id="@+id/shopChainCount"
+                style="@style/newFormStyle_content"
+                android:inputType="phone"
+                android:maxLength="5"
+                android:tag="shopChainCount" />
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="实际经营者姓名" />
+
+            <EditText
+                android:id="@+id/shopLegalperson"
+                style="@style/newFormStyle_content"
+                android:maxLength="10"
+                android:tag="shopLegalperson" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="实际经营者身份证" />
+
+            <EditText
+                android:id="@+id/shopLegalIdcard"
+                style="@style/newFormStyle_content"
+                android:digits="1234567890xX"
+                android:maxLength="18"
+                android:tag="shopLegalIdcard" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="实际经营者联系方式" />
+
+            <LinearLayout style="@style/newFormStyle_content_container">
+
+                <EditText
+                    android:id="@+id/shopOwnerPhonenumber"
+                    style="@style/newFormStyle_content"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:tag="shopOwnerPhonenumber" />
+
+                <Button
+                    android:id="@+id/join_get_verifycode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_bottom_line_join"
+                    android:text="发送验证码"
+                    android:tag="onClick"
+                    android:enabled="false"
+                    android:textColor="@color/join_txt_color_enb"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/newFormStyle_container.join">
+            <LinearLayout style="@style/newFormStyle_content_container">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <EditText
+                        android:id="@+id/join_verifycode"
+                        style="@style/newFormStyle_content"
+                        android:inputType="phone"
+                        android:hint="请填写验证码"
+                        android:maxLength="6"
+                        android:tag="verificationCode" />
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+                <Button
+                    android:id="@+id/join_if_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_bottom_join"
+                    android:paddingEnd="20dp"
+                    android:tag="onClick"
+                    android:paddingStart="20dp"
+                    android:text="验证雅堂账号"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_content_container"
+                android:background="#FFFDE0"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_join_msg"/>
+                <TextView
+                    android:id="@+id/join_get_verifycode_countdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="该手机将用于生成金融账号"
+                    android:textColor="#47AB10"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="实际经营者是否为法人本人" />
+            <asuper.yt.cn.supermarket.views.RadioGroup
+                android:id="@+id/relationShip"
+                style="@style/newFormStyle_content_container"
+                android:checkedButton="@+id/radJoinY"
+                android:tag="relationShip">
+                <TextView
+                    style="@style/newFormStyle_content"
+                    android:text=" " />
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/radJoinY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="是"
+                    android:textColor="#8f8f8f"
+                    custom:key="relationShip"
+                    custom:value="key1" />
+
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/radJoinN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="否"
+                    android:textColor="#8f8f8f"
+                    custom:key="relationShip"
+                    custom:value="key2" />
+            </asuper.yt.cn.supermarket.views.RadioGroup>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/real_man_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="nocheck"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="法人姓名" />
+
+                <EditText
+                    android:id="@+id/shopRealMan"
+                    style="@style/newFormStyle_content"
+                    android:maxLength="10"
+                    android:tag="shopRealMan" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="法人身份证" />
+
+                <EditText
+                    android:id="@+id/shopRealManIdCard"
+                    style="@style/newFormStyle_content"
+                    android:digits="1234567890xX"
+                    android:maxLength="18"
+                    android:tag="shopRealManIdCard" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="法人联系方式" />
+
+                <EditText
+                    android:id="@+id/shopRealManPhone"
+                    style="@style/newFormStyle_content"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:tag="shopRealManPhone" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

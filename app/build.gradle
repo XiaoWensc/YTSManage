@@ -1,0 +1,126 @@
+apply plugin: 'com.android.application'
+// 依赖插件脚本
+apply from: 'tinker-support.gradle'
+android {
+    compileSdkVersion 26
+    buildToolsVersion '27.0.0'
+    signingConfigs {
+        release {
+            keyAlias 'DLP'
+            keyPassword 'itbt1zbh2dlp'
+            storeFile file('./keystore/YtSuper.keystore.jks')
+            storePassword 'itbt1zbh2app'
+        }
+        debug {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('./keystore/debug.keystore')
+            storePassword 'android'
+        }
+    }
+    defaultConfig {
+        applicationId "asuper.yt.cn.supermarket"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 175
+        versionName "XCTZ_3.6.5_2018011910"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'armeabi-v7a' , 'x86'//'mips','armeabi-v7a', 'x86', 'arm64-v8a'
+        }
+        externalNativeBuild {
+            cmake {
+                abiFilters 'armeabi-v7a', 'armeabi'
+            }
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "2009cc277247bbd0b81590eb", //JPush上注册的包名对应的appkey.  release
+//                JPUSH_APPKEY : "b870055a629b9fdff45e469a", //JPush上注册的包名对应的appkey.  debug
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+    }
+
+
+    buildTypes {
+        release {
+            buildConfigField("String", "CLIENT_HOST", "\"https://olesapp.yatang.com.cn/\"")
+            buildConfigField("String", "IMG_HOST", "\"http://olesimg.yatang.com.cn/\"")
+            buildConfigField("String", "BUGLY_APPID", "\"dcfe454fbb\"")
+            buildConfigField("String", "DEBUG_MODE_COMMAND", "\"56eab79040880107388a006e71192600\"")
+            buildConfigField("String", "DEBUG_MODE_PWD", "\"91022ad929eaa50da47fb4d9e820b6cc\"")
+            buildConfigField("String", "JPUSH_TAG", "\"oles_tag_relese\"")
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField("String", "CLIENT_HOST", "\"http://sit3.olesapp.com:8082/\"")
+            buildConfigField("String", "IMG_HOST", "\"http://sit.image.com/\"")
+            buildConfigField("String", "BUGLY_APPID", "\"d6b90d0758\"")
+            buildConfigField("String", "DEBUG_MODE_COMMAND", "\"56eab79040880107388a006e71192600\"") //ytadmin
+            buildConfigField("String", "DEBUG_MODE_PWD", "\"91022ad929eaa50da47fb4d9e820b6cc\"")  //556677
+            buildConfigField("String", "JPUSH_TAG", "\"oles_tag_test\"")
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            //由于小米手机的/system/lib下面没有libjpeg.so库，所以需要指定libjpeg.so的位置
+            jniLibs.srcDirs = ['../libjpeg/prebuilt', 'libs']
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile 'com.squareup.okhttp3:okhttp:3.7.0'
+    compile 'com.android.support:multidex:1.0.2'
+    // 多dex配置
+    compile 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    compile project(':ytlibrary')
+    compile files('libs/ormlite-android-4.48.jar')
+    compile files('libs/ormlite-core-4.48.jar')
+    compile project(path: ':galleryfinal')
+    compile project(':androidflux')
+    compile files('libs/pinyin4j-2.5.0.jar')
+    compile files('libs/BaiduLBS_Android.jar')
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.github.Aspsine:SwipeToLoadLayout:1.0.4'
+    compile project(':seeklibrary')
+    compile 'cn.jiguang.sdk:jpush:3.0.9'
+    // 此处以JPush 3.0.9 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.7'
+    // 此处以JCore 1.1.7 版本为例。
+    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
+    //https://github.com/ikew0ng/SwipeBackLayout
+    compile 'cn.bingoogolapple:bga-badgeview:1.1.3@aar'
+    //https://github.com/bingoogolapple/BGABadgeView-Android/
+    compile 'me.leolin:ShortcutBadger:1.1.19@aar'
+    //https://github.com/lavor-zl/UILibs
+    //ZBar    https://github.com/bingoogolapple/BGAQRCode-Android
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.9@aar'
+    compile 'cn.bingoogolapple:bga-zbar:1.1.9@aar'
+}

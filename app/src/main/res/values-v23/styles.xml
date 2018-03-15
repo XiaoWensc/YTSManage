@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:titleTextColor">#ffffff</item>
+        <item name="actionMenuTextColor">#ffffff</item> <!--  敲定颜色-->
+        <item name="android:textSize">14sp</item> <!--  搞掂字体大小-->
+    </style>
+</resources>

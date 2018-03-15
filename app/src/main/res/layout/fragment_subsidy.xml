@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+    <LinearLayout
+        android:id="@+id/frame_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sld_wht_rd_cn"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/newFormStyle_container"
+            android:tag="nocheck"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="当前节点" />
+
+            <EditText
+                android:id="@+id/nowNode"
+                style="@style/newFormStyle_content"
+                android:enabled="false" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/newFormStyle_container"
+            android:tag="nocheck"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="审批结果" />
+
+            <EditText
+                android:id="@+id/auditStatus"
+                style="@style/newFormStyle_content"
+                android:enabled="false" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/newFormStyle_container"
+            android:tag="nocheck"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="未通过节点" />
+
+            <EditText
+                android:id="@+id/nowRejectNode"
+                style="@style/newFormStyle_content"
+                android:enabled="false" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/newFormStyle_container"
+            android:tag="nocheck"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="未通过的原因" />
+
+            <EditText
+                android:id="@+id/auditOpinion"
+                style="@style/newFormStyle_content"
+                android:enabled="false" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/node_infos_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:button="@null"
+            android:drawableRight="@drawable/folder_bg"
+            android:gravity="center_vertical"
+            android:minHeight="50dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="已审核意见"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/node_infos_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:tag="nocheck"
+            android:visibility="gone">
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="实际经营者姓名" />
+
+            <EditText
+                android:id="@+id/shopLegalperson"
+                style="@style/newFormStyle_content"
+                android:enabled="false"
+                android:tag="shopAssigner" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="店铺名称" />
+
+            <EditText
+                android:id="@+id/shopName"
+                style="@style/newFormStyle_content"
+                android:enabled="false"
+                android:tag="shopName" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="店铺编号" />
+
+            <EditText
+                android:id="@+id/shopcobberNo"
+                style="@style/newFormStyle_content"
+                android:enabled="false"
+                android:tag="xcCode" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="接入时间" />
+
+            <TextView
+                android:id="@+id/joinTime"
+                style="@style/newFormStyle_content"
+                android:tag="xcFinalName" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/newFormStyle_container"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="金融账户" />
+
+            <EditText
+                android:id="@+id/financeNo"
+                style="@style/newFormStyle_content"
+                android:enabled="false"
+                android:tag="xcFinalName" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="租金补贴" />
+
+            <LinearLayout style="@style/newFormStyle_content_container">
+
+                <EditText
+                    android:id="@+id/rentAmount"
+                    style="@style/newFormStyle_content"
+                    android:enabled="false"
+                    android:tag="rentAmount" />
+
+
+                <TextView
+                    style="@style/clentText"
+                    android:text="元" />
+            </LinearLayout>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/newFormStyle_container"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/clentText"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="20dp"
+                android:text="附言" />
+
+            <EditText
+                android:id="@+id/attchment_describe"
+                style="@style/newFormStyle_content_large" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/newFormStyle_content_container"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="附件"
+                android:textColor="@color/gray_dark"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/btnUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_sld_prmr_ccl_cn"
+                android:paddingBottom="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="3dp"
+                android:text="去上传"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fujian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:tag="nocheck">
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

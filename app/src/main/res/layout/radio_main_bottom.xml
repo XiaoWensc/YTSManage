@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.bingoogolapple.badgeview.BGABadgeRadioButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="51dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_weight="1"
+    android:button="@null"
+    android:drawablePadding="5dp"
+    android:drawableTop="@drawable/ic_main_my"
+    android:gravity="center"
+    app:badge_borderWidth="2dp"
+    app:badge_horizontalMargin="12dp"
+    android:textColor="@color/subsidy_double_color"
+    android:textSize="10sp" />

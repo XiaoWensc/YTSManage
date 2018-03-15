@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="neutral_gray">#808080</color>
+    <color name="gray_dark">#404040</color>
+    <color name="gray_light">#c0c0c0</color>
+    <color name="gray_white">#F4F4F4</color>
+    <color name="white">#ffffff</color>
+
+    <integer-array name="load_view">
+        <item>@android:color/white</item>
+        <item>@android:color/white</item>
+        <item>@android:color/white</item>
+    </integer-array>
+</resources>

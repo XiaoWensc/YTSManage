@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_sld_wht_rd_cn"
+    android:gravity="center"
+    android:minWidth="300dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_client_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="标题"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_margin="20dp"
+        android:textColor="@color/gray_dark"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/dialog_client_remind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="提示"
+        android:textColor="@color/neutral_gray"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/dialog_client_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="说明"
+        android:textColor="@color/yt_red"
+        android:textSize="14sp" />
+
+    <View style="@style/commonDivider_vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dialog_client_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_client_detail_left"
+            android:text="确定"
+            android:gravity="center"
+            android:textColor="@color/white"/>
+
+        <View style="@style/commonDivider_horizontal" />
+
+        <TextView
+            android:id="@+id/dialog_client_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="取消"
+            android:gravity="center"
+            android:textColor="@color/neutral_gray" />
+    </LinearLayout>
+</LinearLayout>

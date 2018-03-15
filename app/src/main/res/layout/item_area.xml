@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/slctr_sld_wht_gray">
+
+    <TextView
+        android:id="@+id/tv_select"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dip"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_vertical"
+        android:text="沙发"
+        android:textSize="14sp"
+        android:textColor="@color/neutral_gray" />
+
+</RelativeLayout>

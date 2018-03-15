@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="@android:color/white"
+    android:layout_height="wrap_content">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_light"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/addnew_intention2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_addnew_nointent"
+            android:drawablePadding="10dp"
+            android:text="暂无意向"/>
+        <TextView
+            android:id="@+id/addnew_intention1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_addnew_intent_unknown"
+            android:drawablePadding="10dp"
+            android:text="意向待定"/>
+
+        <TextView
+            android:id="@+id/addnew_intention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_addnew_intent"
+            android:drawablePadding="10dp"
+            android:text="意向加盟"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/addnew_intention_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:drawableTop="@drawable/ic_auditing_cancel"/>
+</LinearLayout>

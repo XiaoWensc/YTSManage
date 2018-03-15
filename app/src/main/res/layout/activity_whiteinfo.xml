@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/top"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            style="@style/LayoutStyle_Oper_Info.V"
+            android:padding="20dp">
+            <LinearLayout
+                style="@style/LayoutStyle_Oper_Info.V">
+                    <LinearLayout
+                        style="@style/LayoutStyle_Oper_Info.V"
+                        android:background="@drawable/bg_oper1">
+                        <LinearLayout
+                            style="@style/LayoutStyle_Oper_Info.H">
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text1"
+                                android:text="店铺编号"/>
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text2"
+                                android:tag="storeId"/>
+                        </LinearLayout>
+                        <include layout="@layout/line"/>
+                        <LinearLayout
+                            style="@style/LayoutStyle_Oper_Info.H">
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text1"
+                                android:text="店主姓名"/>
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text2"
+                                android:tag="contact"/>
+                        </LinearLayout>
+                        <include layout="@layout/line"/>
+                        <LinearLayout
+                            style="@style/LayoutStyle_Oper_Info.H">
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text1"
+                                android:text="联系方式"/>
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text2"
+                                android:tag="mobilePhone"/>
+                        </LinearLayout>
+                        <include layout="@layout/line"/>
+                        <LinearLayout
+                            style="@style/LayoutStyle_Oper_Info.H">
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text1"
+                                android:text="对应子公司"/>
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text2"
+                                android:tag="branchCompanyName"/>
+                        </LinearLayout>
+                        <include layout="@layout/line"/>
+                        <LinearLayout
+                            style="@style/LayoutStyle_Oper_Info.H">
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text1"
+                                android:text="地区"/>
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text2"
+                                android:tag="provinceName!cityName!districtName"/>
+                        </LinearLayout>
+                        <include layout="@layout/line"/>
+                        <LinearLayout
+                            style="@style/LayoutStyle_Oper_Info.H">
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text1"
+                                android:text="详细地址"/>
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text2"
+                                android:tag="address"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="@drawable/bg_oper2" style="@style/LayoutStyle_Oper_Info.V">
+                        <LinearLayout
+                            android:background="@drawable/bg_sld_b2b2b2_rd_cn"
+                            android:layout_margin="10dp"
+                            android:padding="10dp"
+                            android:gravity="center_vertical"
+                            style="@style/LayoutStyle_Oper_Info.H">
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text1"
+                                android:text="仓库编码"/>
+                            <LinearLayout
+                                style="@style/LayoutStyle_Oper_Info.V"
+                                android:paddingLeft="15dp">
+                                <TextView
+                                    android:id="@+id/deliveryCode"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="match_parent"
+                                    android:textColor="#FE6B71"
+                                    android:textSize="14dp"
+                                    android:gravity="center"
+                                    android:tag="deliveryWarehouseCode"/>
+                                <TextView
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="match_parent"
+                                    android:textSize="14dp"
+                                    android:textColor="#999999"
+                                    android:gravity="center"
+                                    android:tag="deliveryWarehouseName"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout style="@style/LayoutStyle_Oper_Info.H">
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text1"
+                                android:text="是否已加入白名单"/>
+                            <TextView
+                                style="@style/TextStyle_Oper_Info.Text2"
+                                android:tag="scPurchaseFlag%"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tvMsg"
+                        style="@style/TextStyle_Oper_Info"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/bg_oper3"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:text="请核对商家信息是否与本次活动的要求一致"/>
+                </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_Sao"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/bg_oper_info_btn2"
+                android:textColor="@color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="返回扫描"/>
+            <Button
+                android:id="@+id/btn_Ok"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/bg_oper_info_btn1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:textColor="@color/colorPrimary"
+                android:text="确认签到"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

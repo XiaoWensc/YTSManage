@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/bg_oper_result_top1" android:state_enabled="true"/>
+    <item android:state_enabled="false" android:drawable="@drawable/bg_oper_result_top2"/>
+</selector>

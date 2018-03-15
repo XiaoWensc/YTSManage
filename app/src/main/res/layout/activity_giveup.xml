@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="70dp"
+    android:background="#66000000">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_sld_wht_rd_cn">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否放弃加盟"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/yt_red_light"
+            android:textSize="18sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_exclamation"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="放弃后的客户将移入 客户回收站>放弃加盟中\n\n可去客户回收站进行解冻回收"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/neutral_gray"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请填写商家放弃加盟理由"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/gray_dark"
+            android:textSize="14sp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_sld_lght_gr_rd_cn">
+            <EditText
+                android:id="@+id/giveup_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLength="100"
+                android:gravity="top"
+                android:textSize="14sp"
+                android:padding="5dp"
+                android:background="@null"/>
+            <TextView
+                android:id="@+id/giveup_content_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:textSize="12sp"
+                android:textColor="@color/neutral_gray"
+                android:text="0/100"
+                android:layout_margin="10dp"/>
+        </FrameLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <supermarket.cn.yt.asuper.ytlibrary.widgets.ProgressButton
+            android:id="@+id/giveup_content_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="25dp"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_sld_rd_lght_ccl_cn"
+            app:pb_progress_text="放弃加盟"
+            app:pb_progress_height="40dp"
+            app:pb_progress_text_color="@color/white"
+            app:pb_progress_text_size="5"/>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

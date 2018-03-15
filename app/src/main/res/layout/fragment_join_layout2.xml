@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/white" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_join_biao"
+            android:gravity="center"
+            android:paddingBottom="4dp"
+            android:text="证照信息"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="营业执照"
+                android:textColor="#3681EB" />
+
+            <asuper.yt.cn.supermarket.views.RadioGroup
+                android:id="@+id/businessLicense"
+                style="@style/newFormStyle_content_container"
+                android:tag="originalScript"
+                android:checkedButton="@+id/businessY">
+
+                <TextView
+                    style="@style/newFormStyle_content"
+                    android:text=" " />
+
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/businessY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="营业执照原件"
+                    android:textColor="#8f8f8f"
+                    custom:key="originalScript"
+                    custom:value="1"
+                    />
+
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/businessN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="营业执照回执"
+                    android:textColor="#8f8f8f"
+                    custom:key="originalScript"
+                    custom:value="2" />
+            </asuper.yt.cn.supermarket.views.RadioGroup>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+            <TextView
+                android:id="@+id/tv_businessLicenseName"
+                style="@style/newFormStyle_label"
+                android:text="营业执照名称" />
+
+            <EditText
+                android:id="@+id/businessLicenseName"
+                style="@style/newFormStyle_content"
+                android:layout_height="wrap_content"
+                android:maxLength="20"
+                android:minHeight="40dp"
+                android:tag="businessLicenseName" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/businessMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="营业场所" />
+
+                <EditText
+                    android:id="@+id/businessPlace"
+                    style="@style/newFormStyle_content"
+                    android:singleLine="true"
+                    android:tag="businessPlace" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    android:id="@+id/tv_businessLicenseNumber"
+                    style="@style/newFormStyle_label"
+                    android:text="注册号/信用代码" />
+
+                <EditText
+                    android:id="@+id/businessLicenseNumber"
+                    style="@style/newFormStyle_content"
+                    android:digits="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+                    android:maxLength="20"
+                    android:tag="businessLicenseNumber" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="注册日期" />
+
+                <LinearLayout
+                    style="@style/newFormStyle_content_container">
+
+                    <TextView
+                        android:id="@+id/businessTime"
+                        style="@style/newFormStyle_content"
+                        android:singleLine="true"
+                        android:tag="registerTime"
+                        android:text="请选择" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_join_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="食品流通许可证"
+                android:textColor="#639DEF" />
+
+            <RadioGroup style="@style/newFormStyle_content_container">
+
+                <TextView
+                    style="@style/newFormStyle_content"
+                    android:text=" " />
+
+                <asuper.yt.cn.supermarket.views.CheckBox
+                    android:id="@+id/foodPapers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="暂无"
+                    android:textColor="#8f8f8f"
+                    custom:key="isFood"
+                    custom:value="2"
+                    custom:value_f = "1"
+                    />
+            </RadioGroup>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/foodMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="食品流通许可证号" />
+
+                <EditText
+                    style="@style/newFormStyle_content"
+                    android:tag="foodCode" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="食品流通许可证有效期" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <TextView
+                        android:id="@+id/foodTimeStart"
+                        style="@style/newFormStyle_content"
+                        android:layout_weight="1"
+                        android:drawableRight="@drawable/ic_join_xiala"
+                        android:paddingEnd="40dp"
+                        android:paddingStart="20dp"
+                        android:tag="foodTimeStart"
+                        android:text="起始时间" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_join_heng" />
+
+                    <TextView
+                        android:id="@+id/foodTimeEnd"
+                        style="@style/newFormStyle_content"
+                        android:layout_weight="1"
+                        android:drawableRight="@drawable/ic_join_xiala"
+                        android:paddingEnd="40dp"
+                        android:paddingStart="20dp"
+                        android:tag="foodTimeEnd"
+                        android:text="结束时间" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="是否售卖烟草" />
+
+            <asuper.yt.cn.supermarket.views.RadioGroup
+                android:id="@+id/smokePapers"
+                style="@style/newFormStyle_content_container"
+                android:tag="isTobacco"
+                android:checkedButton="@+id/smokeY">
+
+                <TextView
+                    style="@style/newFormStyle_content"
+                    android:text=" " />
+
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/smokeY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="是"
+                    android:textColor="#8f8f8f"
+                    custom:key="isTobacco"
+                    custom:value="1"
+                    />
+
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/smokeN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="否"
+                    android:textColor="#8f8f8f"
+                    custom:key="isTobacco"
+                    custom:value="2"/>
+            </asuper.yt.cn.supermarket.views.RadioGroup>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/smokeMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="烟草专卖零售许可证"
+                    android:textColor="#3681EB" />
+
+                <RadioGroup style="@style/newFormStyle_content_container">
+
+                    <TextView
+                        style="@style/newFormStyle_content"
+                        android:text=" " />
+
+                    <asuper.yt.cn.supermarket.views.CheckBox
+                        android:id="@+id/smokePapersMs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/ic_sl_checkbox"
+                        android:drawablePadding="10dp"
+                        android:text="暂无"
+                        android:textColor="#8f8f8f"
+                        custom:key="isNotTobacco"
+                        custom:value="2"
+                        custom:value_f = "1" />
+                </RadioGroup>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/smokeMsg_Msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/newFormStyle_container.join">
+
+                    <TextView
+                        style="@style/newFormStyle_label"
+                        android:text="烟草专卖零售许可证号" />
+
+                    <EditText
+                        style="@style/newFormStyle_content"
+                        android:tag="tobaccoCode" />
+
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/newFormStyle_container.join">
+
+                    <TextView
+                        style="@style/newFormStyle_label"
+                        android:text="烟草专卖零售许有效期" />
+
+                    <LinearLayout style="@style/newFormStyle_content_container">
+
+                        <TextView
+                            android:id="@+id/smokeTimeStart"
+                            style="@style/newFormStyle_content"
+                            android:layout_weight="1"
+                            android:drawableRight="@drawable/ic_join_xiala"
+                            android:paddingEnd="40dp"
+                            android:paddingStart="20dp"
+                            android:tag="tobaccoTimeStart"
+                            android:text="起始时间" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_join_heng" />
+
+                        <TextView
+                            android:id="@+id/smokeTimeEnd"
+                            style="@style/newFormStyle_content"
+                            android:layout_weight="1"
+                            android:drawableRight="@drawable/ic_join_xiala"
+                            android:paddingEnd="40dp"
+                            android:paddingStart="20dp"
+                            android:tag="tobaccoTimeEnd"
+                            android:text="结束时间" />
+                    </LinearLayout>
+
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/newFormStyle_container.join">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="店铺来源" />
+
+            <asuper.yt.cn.supermarket.views.RadioGroup
+                android:id="@+id/rentPapers"
+                style="@style/newFormStyle_content_container"
+                android:tag="storeSource"
+                android:checkedButton="@+id/rentN">
+
+                <TextView
+                    style="@style/newFormStyle_content"
+                    android:text=" " />
+
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/rentY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="自有房屋"
+                    android:textColor="#8f8f8f"
+                    custom:key="storeSource"
+                    custom:value="2" />
+
+                <asuper.yt.cn.supermarket.views.RadioButton
+                    android:id="@+id/rentN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/ic_sl_checkbox"
+                    android:drawablePadding="10dp"
+                    android:text="租赁房屋"
+                    android:textColor="#8f8f8f"
+                    custom:key="storeSource"
+                    custom:value="1" />
+            </asuper.yt.cn.supermarket.views.RadioGroup>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rentPapersMsg"
+            style="@style/newFormStyle_container.join">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="租赁合同有效期限" />
+
+            <LinearLayout style="@style/newFormStyle_content_container">
+
+                <TextView
+                    android:id="@+id/rentTimeStart"
+                    style="@style/newFormStyle_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_join_xiala"
+                    android:paddingEnd="40dp"
+                    android:paddingStart="20dp"
+                    android:tag="leaseTermOfValidityStart"
+                    android:text="起始时间" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_join_heng" />
+
+                <TextView
+                    android:id="@+id/rentTimeEnd"
+                    style="@style/newFormStyle_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_join_xiala"
+                    android:paddingEnd="40dp"
+                    android:tag="leaseTermOfValidityEnd"
+                    android:paddingStart="20dp"
+                    android:text="结束时间" />
+            </LinearLayout>
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:minHeight="50dp"
+        android:titleTextColor="#ffffff"
+        app:theme="@style/ToolbarTheme"
+        android:background="?attr/colorPrimary">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:text="新动态" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioButton
+                android:id="@+id/node_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dynamic_brdr_btm"
+                android:button="@null"
+                android:drawablePadding="5dp"
+                android:drawableTop="@mipmap/ic_newdynamic_tz"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="20dp"
+                android:checked="true"
+                android:text="通知"
+                android:textColor="@color/txt_coloc_dynamic"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/node_list_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:visibility="gone"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:background="@drawable/bg_sld_rd_brdr_wht_ccl_cn"
+                android:textSize="12sp"
+                android:focusable="false"
+                android:clickable="false"
+                android:textColor="@color/white"
+                android:text="20"/>
+        </FrameLayout>
+
+        <View style="@style/commonDivider_horizontal" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioButton
+                android:id="@+id/daib_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dynamic_brdr_btm"
+                android:button="@null"
+                android:drawableTop="@mipmap/ic_newdynamic_db"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:drawablePadding="5dp"
+                android:paddingTop="20dp"
+                android:text="待办事项"
+                android:textColor="@color/txt_coloc_dynamic"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/daib_list_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:visibility="gone"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:background="@drawable/bg_sld_rd_brdr_wht_ccl_cn"
+                android:textSize="12sp"
+                android:focusable="false"
+                android:clickable="false"
+                android:textColor="@color/white"
+                android:text="20"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <View style="@style/commonDivider_vertical" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/recycle_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+</LinearLayout>

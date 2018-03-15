@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/yt_blue_light"
+        android:layout_marginLeft="77dp"/>
+
+    <include layout="@layout/layout_simple_swipe_refresh_list"/>
+</FrameLayout>

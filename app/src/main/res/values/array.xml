@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="setting_host_entries_value">
+        <item>sit3</item>
+        <item>dev</item>
+        <item>produce</item>
+    </string-array>
+
+    <string-array name="setting_host_entries">
+        <item>SIT环境</item>
+        <item>UAT环境</item>
+        <item>PRO环境</item>
+    </string-array>
+
+    <string name="default_setting_host_entries_value">sit3</string>
+
+</resources>

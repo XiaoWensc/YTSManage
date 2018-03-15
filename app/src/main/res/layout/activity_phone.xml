@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#eeeeee"
+    android:layout_height="match_parent">
+
+    <asuper.yt.cn.supermarket.modules.contacts.ClearEditText
+        android:id="@+id/query"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_sld_wht_rd_cn"
+        android:hint="搜索联系人"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        android:padding="7dp"
+        android:textColorHint="#BBBDBF"
+        android:textSize="12dp" />
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/query"
+        android:cacheColorHint="#00000000"
+        android:divider="#00000000"
+        android:dividerHeight="0dp"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none" />
+
+    <asuper.yt.cn.supermarket.modules.contacts.MyLetterListView
+        android:id="@+id/myexpand_list"
+        android:layout_width="25dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/query"
+        android:layout_marginRight="2dp"
+        android:paddingBottom="7dp" />
+
+
+</RelativeLayout>

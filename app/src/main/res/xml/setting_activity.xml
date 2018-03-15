@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="服务器配置">
+        <ListPreference
+            android:title="环境选择"
+            android:dialogTitle="选择环境"
+            android:summary="选择当前需要访问的环境配置"
+            android:key="env_selection"
+            android:defaultValue="@string/default_setting_host_entries_value"
+            android:entries="@array/setting_host_entries"
+            android:entryValues="@array/setting_host_entries_value" />
+        <EditTextPreference
+            android:title="服务器地址"
+            android:summary="点击设置发起请求的服务器地址"
+            android:dependency="env_selection"
+            android:key="host" />
+        <EditTextPreference
+            android:title="图片服务器地址"
+            android:summary="点击设置请求图片的图片服务器地址"
+            android:dependency="env_selection"
+            android:key="img_host" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="其他配置">
+        <SwitchPreference
+            android:title="崩溃测试"
+            android:key="crash_test"
+            android:summary="注意：开启后，APP会立即崩溃，并重启" />
+
+        <SwitchPreference
+            android:title="全局异常捕获"
+            android:checked="true"
+            android:key="global_capture"
+            android:summary="开启后将不会弹出系统默认的crash对话框而是直接重启" />
+
+        <SwitchPreference
+            android:title="自动填充(加盟评分表)"
+            android:key="auto_fill_attachment"
+            android:summary="开启后将自动填充下拉列表和附件图片" />
+    </PreferenceCategory>
+</PreferenceScreen>

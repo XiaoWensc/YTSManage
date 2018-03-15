@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bg_fragment_join_top" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_join_biao"
+            android:gravity="center"
+            android:paddingBottom="4dp"
+            android:visibility="gone"
+            android:text="审核信息"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+
+        <LinearLayout
+            android:id="@+id/pending_auditing"
+            style="@style/newFormStyle_container.join"
+            android:padding="10dp"
+            android:tag="nocheck"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="当前审批节点" />
+
+            <TextView
+                android:id="@+id/currentAuditingNodeName"
+                style="@style/newFormStyle_content" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:tag="nocheck">
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="审批结果" />
+
+                <TextView
+                    style="@style/newFormStyle_content"
+                    android:text="已通过" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/newFormStyle_container.join"
+                android:tag="nocheck">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="综合得分" />
+
+                <TextView
+                    android:id="@+id/shopTotalScore"
+                    style="@style/newFormStyle_content" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/newFormStyle_container.join"
+                android:tag="nocheck">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="综合等级" />
+
+                <TextView
+                    android:id="@+id/shopScoreGrade"
+                    style="@style/newFormStyle_content" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="小超编号" />
+
+                <TextView
+                    android:id="@+id/xcCode"
+                    style="@style/newFormStyle_content" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/auditingNodeListContainer"
+                style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="审批意见" />
+
+                <ListView
+                    android:id="@+id/auditingNodeList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/node_infos_title"
+            style="@style/newFormStyle_label"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:button="@null"
+            android:drawableRight="@drawable/folder_bg"
+            android:text="已审核意见"
+            android:tag="onClick"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/node_infos_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:tag="nocheck"
+            android:visibility="gone">
+
+            <View
+                style="@style/commonDivider_vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/reject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="审批结果" />
+
+                <TextView
+                    style="@style/newFormStyle_content"
+                    android:text="未通过" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="未通过的节点" />
+
+                <TextView
+                    android:id="@+id/currentAuditingNodeNameNo"
+                    style="@style/newFormStyle_content" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container.join">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="未通过的原因" />
+
+                <TextView
+                    android:id="@+id/rejectReson"
+                    style="@style/newFormStyle_content_large" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <View
+                style="@style/commonDivider_vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/gray_white" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

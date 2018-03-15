@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/gray_white">
+
+    <asuper.yt.cn.supermarket.views.NoScrollViewPager
+        android:id="@+id/frame_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+    <RadioGroup
+        android:id="@+id/main_radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_gravity="bottom"
+        app:layout_behavior="asuper.yt.cn.supermarket.modules.myclient.MyClientActionBarBehavior"
+        android:gravity="center"
+        android:background="@drawable/main_bottom_bg"
+        android:orientation="horizontal"/>
+
+    <supermarket.cn.yt.asuper.ytlibrary.widgets.RectXView
+        android:id="@+id/imageButton"
+        android:visibility="gone"
+        app:layout_behavior="asuper.yt.cn.supermarket.modules.myclient.MyClientActionBarBehavior"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_gravity="bottom|center_horizontal"/>
+</android.support.design.widget.CoordinatorLayout>

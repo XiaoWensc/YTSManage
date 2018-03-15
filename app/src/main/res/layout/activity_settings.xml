@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/top" />
+
+    <LinearLayout
+        style="@style/FormItem.Full">
+
+        <TextView
+            style="@style/clentText"
+            android:text="版本名称" />
+
+        <TextView
+            android:id="@+id/varName"
+            style="@style/clentText"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingRight="10dp"
+            android:text=" 1" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/FormItem.Full">
+
+        <TextView
+            style="@style/clentText"
+            android:text="版本号" />
+
+        <TextView
+            android:id="@+id/varCode"
+            style="@style/clentText"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingRight="10dp"
+            android:text="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/isUpdate"
+        style="@style/FormItem.Full">
+
+        <TextView
+            style="@style/clentText"
+            android:drawableLeft="@drawable/ic_sync"
+            android:text="检查更新" />
+    </LinearLayout>
+
+</LinearLayout>

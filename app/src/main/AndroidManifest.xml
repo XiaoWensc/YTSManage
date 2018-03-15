@@ -1,0 +1,353 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    package="asuper.yt.cn.supermarket">
+
+    <uses-sdk android:minSdkVersion="17" />
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 向外拨打电话的权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 调用照相机相关权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 访问SD卡 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 百度地图权限  -->
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- SD卡读取权限，用户写入离线定位数据-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!-- Required -->
+    <permission
+        android:name="asuper.yt.cn.supermarket.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+    <!-- Required -->
+    <uses-permission android:name="asuper.yt.cn.supermarket.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- Optional. Required for location feature -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <permission
+        android:name="android.permission.STATUS_BAR_SERVICE"
+        android:protectionLevel="signature" />
+
+    <application
+        android:name=".base.SampleApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo_xiaochao"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo_xiaochao"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.Slide">
+
+        <!-- 欢迎 -->
+        <activity
+            android:name=".modules.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateUnchanged">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 欢迎 -->
+        <activity
+            android:name=".modules.TestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateUnchanged">
+        </activity>
+
+        <!-- 登录 -->
+        <activity
+            android:name=".modules.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+
+        <!-- 设置 -->
+        <activity
+            android:name=".modules.setting.SettingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged"
+            android:theme="@style/AppTheme"/>
+
+
+        <!-- Main -->
+        <activity
+            android:name=".modules.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <!-- Main -->
+
+
+        <!-- 我的客户列表 -->
+        <activity
+            android:name=".modules.myclient.MyClientListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!-- 我的Activity -->
+        <activity
+            android:name=".modules.setting.AccountActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+
+        <!-- 拜访 -->
+        <activity
+            android:name=".modules.plan.DropInActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--我的计划-->
+        <activity
+            android:name=".modules.plan.PlanActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+
+        <!--添加计划-->
+        <activity
+            android:name=".modules.plan.AddPlanActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <!-- 添加拜访 -->
+        <activity
+            android:name=".modules.newclient.AddNewClientActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+
+        <!-- 拜访 -->
+        <activity
+            android:name=".modules.common.PreviewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+
+        <!-- 拜访 -->
+        <activity
+            android:name=".modules.common.ImageGalleryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <!-- 拜访历史 -->
+        <activity
+            android:name=".modules.plan.DropRecordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <activity
+            android:name=".modules.myclient.MyClientDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <!--拜访详情-->
+        <activity
+            android:name=".modules.plan.DropDetailsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+
+        <!--拜访详情-->
+        <activity
+            android:name=".modules.recyclebin.ClientRecycleActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--拜访详情-->
+        <activity
+            android:name=".modules.myclew.MyClewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <!--个人资料修改-->
+        <activity
+            android:name=".modules.myprofile.AccountSecondaryActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <!--个人资料修改-->
+        <activity
+            android:name=".modules.myprofile.EditAccountActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <!--设置-->
+
+
+        <!--拜访详情-->
+        <activity
+            android:name=".modules.myclew.NewMissionDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--拜访详情-->
+        <activity
+            android:name=".modules.coauditing.MissonsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+
+        <!--拜访详情-->
+        <activity
+            android:name=".modules.coauditing.MymissionActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+
+        <!--拜访详情-->
+        <activity
+            android:name=".modules.coauditing.AuditingMessageActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--拜访详情-->
+        <activity
+            android:name=".modules.myprofile.AboutActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--拜访详情-->
+        <activity
+            android:name=".modules.myclient.MyClientListSearchActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--拜访详情-->
+        <activity
+            android:name=".modules.myclient.TempVisitActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <activity
+            android:name=".modules.myclient.GiveupActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--二维码扫描-->
+        <activity
+            android:name=".modules.operate.zbar.ZBarActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <!--商户详情-->
+        <activity
+            android:name=".modules.operate.zbar.WhiteInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <!--签到结果页-->
+        <activity
+            android:name=".modules.operate.zbar.OperResultActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+
+        <activity
+            android:name=".modules.dynamic.ShopDynamicActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity
+            android:name=".modules.myclient.contact.PopWindowActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Slide.Anim"
+            android:windowSoftInputMode="stateHidden|stateUnchanged"/>
+
+
+        <!-- User defined. 用户自定义的广播接收器-->
+        <receiver
+            android:name=".service.MyReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <!--Required 用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!--Required 用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!--Required 用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!--Required 用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <category android:name="asuper.yt.cn.supermarket" />
+            </intent-filter>
+        </receiver>
+        <!--配置推送结束-->
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="8UEEjCQYoQE1jP3QB38QuYz6jYfKDSqi" />  <!--http://lbsyun.baidu.com/apiconsole/key-->
+
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="asuper.yt.cn.supermarket.camera_photos.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <provider
+            android:name=".base.BuglyFileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="name,authorities,exported,grantUriPermissions">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"
+                tools:replace="name,resource" />
+        </provider>
+
+        <provider
+            android:name=".utils.MyFileProvider"
+            android:authorities="asuper.yt.cn.supermarket.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

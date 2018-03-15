@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/gray_white"
+    android:layout_height="match_parent">
+    <include layout="@layout/top"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="计划类型"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+
+    <include layout="@layout/line" />
+
+    <RadioGroup
+        android:id="@+id/temp_visit_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/radHome"
+        android:orientation="vertical"
+        android:paddingLeft="15dp">
+
+        <RadioButton
+            android:id="@+id/temp_visit_type_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="电话拜访"
+            android:checked="true"
+            android:textColor="#666666"
+            android:button="@drawable/ic_sl_checkbox"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <RadioButton
+            android:id="@+id/temp_visit_type_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:button="@drawable/ic_sl_checkbox"
+            android:text="上门拜访"
+            android:textColor="#666666"
+            android:textSize="14sp" />
+    </RadioGroup>
+
+    <include layout="@layout/line" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:text="请填下此次拜访记录"
+        android:textColor="@color/neutral_gray"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/temp_visit_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_sld_wht_rd_cn"
+        android:padding="5dp"
+        android:gravity="top"
+        android:maxLength="100"
+        android:textSize="14sp"
+        android:lines="7" />
+
+    <TextView
+        android:id="@+id/temp_visit_content_length"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="0/100"
+        android:textColor="@color/neutral_gray"
+        android:paddingRight="20dp"
+        android:textSize="12sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <supermarket.cn.yt.asuper.ytlibrary.widgets.ProgressButton
+        android:id="@+id/temp_visit_over"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/bg_sld_prmr_ccl_cn"
+        android:layout_gravity="bottom"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:pb_progress_height="40dp"
+        app:pb_progress_text="拜访结束"
+        app:pb_progress_text_size="5"/>
+</LinearLayout>

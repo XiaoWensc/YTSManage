@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_white"
+    android:orientation="vertical">
+    <include layout="@layout/top"
+        android:id="@+id/top"/>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="none">
+    <LinearLayout
+        android:id="@+id/new_mission_detail_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        android:padding="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sld_wht_rd_cn"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/accountInputBorder"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                style="@style/clentText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimary"
+                android:text="分配详情" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/yt_gray_light"/>
+        <LinearLayout
+            style="@style/accountInputBorder"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                style="@style/clentText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="商家姓名" />
+
+            <TextView
+                android:id="@+id/newmission_detail_keepername"
+                style="@style/accountEditText"
+                android:tag="shopkeeperName" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/accountInputBorder"
+            android:minHeight="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                style="@style/clentText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="店铺名称"/>
+
+            <TextView
+                android:id="@+id/newmission_detail_shopInfo"
+                style="@style/accountEditText"
+                android:textColor="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:singleLine="false"
+                android:tag="shopName" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/accountInputBorder"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                style="@style/clentText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="店铺类型" />
+
+            <TextView
+                android:id="@+id/newmission_detail_shopType"
+                style="@style/accountEditText"
+                android:tag="shopAssigner" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/accountInputBorder"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                style="@style/clentText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="意向加盟城市" />
+
+            <TextView
+                android:id="@+id/newmission_detail_city"
+                style="@style/accountEditText"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="40dp"
+            style="@style/accountInputBorder"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                style="@style/clentText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="了解渠道" />
+
+            <TextView
+                android:id="@+id/newmission_detail_way"
+                style="@style/accountEditText"
+                android:tag="knowChanel" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/accountInputBorder"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                style="@style/clentText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="商家初步意向" />
+
+            <TextView
+                android:id="@+id/newmission_detail_intention"
+                style="@style/accountEditText"
+                android:textColor="@android:color/holo_red_light"
+                android:tag="applySteup" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/accountInputBorder"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                style="@style/clentText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="商家联系电话" />
+
+            <TextView
+                android:id="@+id/newmission_detail_phone"
+                style="@style/accountEditText"
+                android:textColor="@color/colorPrimary"
+                android:tag="shopkeeperMobile" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/accountInputBorder"
+            android:minHeight="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                style="@style/clentText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="分配备注" />
+
+
+            <TextView
+                android:id="@+id/newmission_detail_remark"
+                style="@style/accountEditText"
+                android:layout_height="wrap_content"
+                android:singleLine="false"
+                android:tag="remark" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="5dp"
+            android:background="@color/yt_gray_light"/>
+        <LinearLayout
+            style="@style/accountInputBorder"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                android:id="@+id/newmission_detail_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2017-11-11" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="完善资料>>"/>
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

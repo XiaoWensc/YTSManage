@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/join_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:background="@android:color/white"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/pending_auditing"
+            style="@style/newFormStyle_container"
+            android:tag="nocheck"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/newFormStyle_label"
+                android:text="当前审批节点" />
+
+            <TextView
+                android:id="@+id/currentAuditingNodeName"
+                style="@style/newFormStyle_content" />
+
+            <View style="@style/commonDivider_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:tag="nocheck"
+            android:visibility="gone">
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="审批结果" />
+
+                <TextView
+                    style="@style/newFormStyle_content"
+                    android:text="已通过" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/newFormStyle_container"
+                android:tag="nocheck">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="综合得分" />
+
+                <TextView
+                    android:id="@+id/shopTotalScore"
+                    style="@style/newFormStyle_content" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/newFormStyle_container"
+                android:tag="nocheck">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="综合等级" />
+
+                <TextView
+                    android:id="@+id/shopScoreGrade"
+                    style="@style/newFormStyle_content" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="门头补贴金额" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <TextView
+                        android:id="@+id/doorAllowanceAmount"
+                        style="@style/newFormStyle_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="元" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="租金补贴金额" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <TextView
+                        android:id="@+id/rentAllowanceAmount"
+                        style="@style/newFormStyle_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="元" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="小超编号" />
+
+                <TextView
+                    android:id="@+id/xcCode"
+                    style="@style/newFormStyle_content" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="金融账户" />
+
+                <TextView
+                    android:id="@+id/itbtLoginName"
+                    style="@style/newFormStyle_content" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/auditingNodeListContainer"
+                style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="审批意见" />
+
+                <ListView
+                    android:id="@+id/auditingNodeList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/node_infos_title"
+            style="@style/newFormStyle_label"
+            android:layout_margin="10dp"
+            android:button="@null"
+            android:drawableRight="@drawable/folder_bg"
+            android:text="已审核意见"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/node_infos_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:tag="nocheck"
+            android:visibility="gone">
+
+        </LinearLayout>
+
+        <View
+            style="@style/commonDivider_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+        <LinearLayout
+            android:id="@+id/reject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="审批结果" />
+
+                <TextView
+                    style="@style/newFormStyle_content"
+                    android:text="未通过" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="未通过的节点" />
+
+                <TextView
+                    android:id="@+id/currentAuditingNodeNameNo"
+                    style="@style/newFormStyle_content" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="未通过的原因" />
+
+                <TextView
+                    android:id="@+id/rejectReson"
+                    style="@style/newFormStyle_content_large" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            style="@style/commonDivider_vertical"
+            android:background="@color/gray_white" />
+
+        <LinearLayout
+            android:id="@+id/frame_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="所在城市" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <TextView
+                        android:id="@+id/sqCity"
+                        style="@style/newFormStyle_content"
+                        android:text="选择城市" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="城市评级" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/cityXing"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="cityXing" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <View
+                style="@style/commonDivider_vertical"
+
+                android:background="@color/gray_white" />
+            <!--店铺名称-->
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    android:id="@+id/tv_shopName"
+                    style="@style/newFormStyle_label"
+                    android:text="店铺名称" />
+
+                <EditText
+                    android:id="@+id/shopName"
+                    style="@style/newFormStyle_content"
+                    android:layout_height="wrap_content"
+                    android:maxLength="8"
+                    android:minHeight="40dp"
+                    android:tag="shopName" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="店铺地址" />
+
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:id="@+id/addres"
+                    style="@style/newFormStyle_content"
+                    android:layout_height="wrap_content"
+                    android:maxLength="50"
+                    android:minHeight="40dp"
+                    android:tag="addres" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <View
+                style="@style/commonDivider_vertical"
+                android:background="@color/gray_white" />
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="法人姓名" />
+
+                <EditText
+                    android:id="@+id/shopRealMan"
+                    style="@style/newFormStyle_content"
+                    android:maxLength="10"
+                    android:tag="shopRealMan" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="法人身份证" />
+
+                <EditText
+                    android:id="@+id/shopRealManIdCard"
+                    style="@style/newFormStyle_content"
+                    android:digits="1234567890xX"
+                    android:maxLength="18"
+                    android:tag="shopRealManIdCard" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="经营场所（与营业执照保持一致）" />
+
+                <EditText
+                    android:id="@+id/businessPlace"
+                    style="@style/newFormStyle_content"
+                    android:singleLine="true"
+                    android:tag="businessPlace" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="法人联系方式" />
+
+                <EditText
+                    android:id="@+id/shopRealManPhone"
+                    style="@style/newFormStyle_content"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:tag="shopRealManPhone" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="实际经营者" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/real_man"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="relationShip" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/real_man_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout style="@style/newFormStyle_container">
+
+                    <TextView
+                        style="@style/newFormStyle_label"
+                        android:text="实际经营者姓名" />
+
+                    <EditText
+                        android:id="@+id/fname"
+                        style="@style/newFormStyle_content"
+                        android:maxLength="10"
+                        android:tag="fname" />
+
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/newFormStyle_container">
+
+                    <TextView
+                        style="@style/newFormStyle_label"
+                        android:text="实际经营者身份证" />
+
+                    <EditText
+                        android:id="@+id/shopLegalIdcard"
+                        style="@style/newFormStyle_content"
+                        android:digits="1234567890xX"
+                        android:maxLength="18"
+                        android:tag="shopLegalIdcard" />
+
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/newFormStyle_container">
+
+                    <TextView
+                        style="@style/newFormStyle_label"
+                        android:text="实际经营者手机号码" />
+
+                    <EditText
+                        android:id="@+id/phone"
+                        style="@style/newFormStyle_content"
+                        android:inputType="phone"
+                        android:maxLength="11"
+                        android:tag="phone" />
+
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    android:id="@+id/tv_businessLicenseName"
+                    style="@style/newFormStyle_label"
+                    android:text="营业执照名称" />
+
+                <EditText
+                    android:id="@+id/businessLicenseName"
+                    style="@style/newFormStyle_content"
+                    android:layout_height="wrap_content"
+                    android:maxLength="20"
+                    android:minHeight="40dp"
+                    android:tag="businessLicenseName" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <!--店铺名称-->
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    android:id="@+id/tv_businessLicenseNumber"
+                    style="@style/newFormStyle_label"
+                    android:text="注册号/信用代码" />
+
+                <EditText
+                    android:id="@+id/businessLicenseNumber"
+                    style="@style/newFormStyle_content"
+                    android:digits="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+                    android:maxLength="20"
+                    android:tag="businessLicenseNumber" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="验证码" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <EditText
+                        android:id="@+id/join_verifycode"
+                        style="@style/newFormStyle_content"
+                        android:inputType="phone"
+                        android:maxLength="6"
+                        android:tag="verify_code" />
+
+                    <Button
+                        android:id="@+id/join_get_verifycode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:text="获取验证码"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/join_get_verifycode_countdown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_sld_prmr_ccl_cn"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <View
+                style="@style/commonDivider_vertical"
+                android:background="@color/gray_white" />
+
+            <LinearLayout
+                style="@style/newFormStyle_content_container"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    style="@style/newFormStyle_container"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/newFormStyle_label"
+                        android:text="门头长度" />
+
+                    <LinearLayout style="@style/newFormStyle_content_container">
+
+                        <EditText
+                            android:id="@+id/shopDoorLength"
+                            style="@style/newFormStyle_content"
+                            android:inputType="numberDecimal"
+                            android:tag="shopDoorLength"
+                            android:text="0" />
+
+                        <TextView
+                            style="@style/clentText"
+                            android:text="(米)"
+                            android:textColor="@color/neutral_gray" />
+                    </LinearLayout>
+
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/newFormStyle_container"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/newFormStyle_label"
+                        android:text="门头宽度" />
+
+                    <LinearLayout style="@style/newFormStyle_content_container">
+
+                        <EditText
+                            android:id="@+id/shopDoorWidth"
+                            style="@style/newFormStyle_content"
+                            android:inputType="numberDecimal"
+                            android:tag="shopDoorWidth"
+                            android:text="0" />
+
+                        <TextView
+                            style="@style/clentText"
+                            android:text="(米)"
+                            android:textColor="@color/neutral_gray" />
+                    </LinearLayout>
+
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/newFormStyle_content_container"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp">
+
+                <LinearLayout
+                    style="@style/newFormStyle_container"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/newFormStyle_label"
+                        android:text="门头面积(长*宽)" />
+
+                    <LinearLayout style="@style/newFormStyle_content_container">
+
+                        <EditText
+                            android:id="@+id/shopDoorArea"
+                            style="@style/newFormStyle_content"
+                            android:enabled="false" />
+
+                        <TextView
+                            style="@style/clentText"
+                            android:text="(平方米)"
+                            android:textColor="@color/neutral_gray" />
+                    </LinearLayout>
+
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/newFormStyle_container"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/newFormStyle_label"
+                        android:text="月租金" />
+
+                    <LinearLayout style="@style/newFormStyle_content_container">
+
+                        <EditText
+                            android:id="@+id/rent_monthly"
+                            style="@style/newFormStyle_content"
+                            android:inputType="numberDecimal"
+                            android:maxLength="6"
+                            android:tag="shopMonthRent" />
+
+                        <TextView
+                            style="@style/clentText"
+                            android:text="(元)"
+                            android:textColor="@color/neutral_gray" />
+                    </LinearLayout>
+
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="补贴方式" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/subsidy"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="subsidy" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/newFormStyle_container"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="补贴上浮比例" />
+
+                <EditText
+                    android:id="@+id/make"
+                    style="@style/newFormStyle_content"
+                    android:inputType="phone"
+                    android:maxLength="2"
+                    android:tag="make" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+
+            <View
+                style="@style/commonDivider_vertical"
+                android:background="@color/gray_white" />
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="门头材质单价上限" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/shopDoorheadMaterial"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="shopDoorheadMaterial" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/newFormStyle_container"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="租金" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <EditText
+                        android:id="@+id/rent"
+                        style="@style/newFormStyle_content"
+                        android:editable="false"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6" />
+
+                    <TextView
+                        style="@style/clentText"
+                        android:text="元/平米" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="店铺类型" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/shopType"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="shopType" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="内外形象" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/sp_xingx"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="xingx" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="收银设备" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/getmoney"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="getmoney" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="外卖平台" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/takeOut"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="takeOut" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="增值服务" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/appreciation"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="appreciation" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="面积" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <EditText
+                        android:id="@+id/area"
+                        style="@style/newFormStyle_content"
+                        android:inputType="numberDecimal"
+                        android:maxLength="4"
+                        android:tag="area" />
+
+                    <TextView
+                        style="@style/clentText"
+                        android:text="平米" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="扫码支付" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/saoPay"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="saoPay" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="月销售额" />
+
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <EditText
+                        android:id="@+id/sale"
+                        style="@style/newFormStyle_content"
+                        android:layout_weight="1"
+                        android:inputType="numberDecimal"
+                        android:maxLength="8"
+                        android:tag="sale" />
+
+                    <TextView
+                        style="@style/clentText"
+                        android:text="万元" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="营业年限" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <EditText
+                        android:id="@+id/year"
+                        style="@style/newFormStyle_content"
+                        android:inputType="numberDecimal"
+                        android:maxLength="3"
+                        android:tag="year" />
+
+
+                    <TextView
+                        style="@style/clentText"
+                        android:text="年" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="经营者年龄" />
+
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/bossAge"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="bossAge" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="店内灯光" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/lamplight"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="lamplight" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="店铺描述" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/describe"
+                    style="@style/newFormStyle_content_large"
+                    android:layout_marginBottom="10dp"
+                    android:tag="describe" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/commonDivider_vertical"
+                android:background="@color/gray_white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/newFormStyle_container">
+
+                    <TextView
+                        style="@style/newFormStyle_label"
+                        android:text="是否连锁" />
+
+                    <RadioGroup
+                        android:id="@+id/liansGroup"
+                        style="@style/newFormStyle_content_container">
+
+                        <TextView
+                            style="@style/newFormStyle_content"
+                            android:text="请选择" />
+
+                        <asuper.yt.cn.supermarket.views.RadioButton
+                            android:id="@+id/liansYes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@null"
+                            android:drawableLeft="@drawable/ic_sl_checkbox"
+                            android:drawablePadding="10dp"
+                            android:text="是"
+                            android:textColor="#8f8f8f"
+                            custom:key="lians"
+                            custom:value="true" />
+
+                        <asuper.yt.cn.supermarket.views.RadioButton
+                            android:id="@+id/liansNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:button="@null"
+                            android:drawableLeft="@drawable/ic_sl_checkbox"
+                            android:drawablePadding="10dp"
+                            android:text="否"
+                            android:textColor="#8f8f8f"
+                            custom:key="lians"
+                            custom:value="false" />
+                    </RadioGroup>
+
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/shopChainCountView"
+                    style="@style/newFormStyle_container"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/newFormStyle_label"
+                        android:text="连锁数量" />
+
+
+                    <EditText
+                        android:id="@+id/shopChainCount"
+                        style="@style/newFormStyle_content"
+                        android:inputType="phone"
+                        android:maxLength="5"
+                        android:tag="shopChainCount" />
+
+                    <View style="@style/commonDivider_vertical" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="是否新开" />
+
+                <RadioGroup
+                    android:id="@+id/newkGroup"
+                    style="@style/newFormStyle_content_container">
+
+                    <TextView
+                        style="@style/newFormStyle_content"
+                        android:text="请选择" />
+
+                    <asuper.yt.cn.supermarket.views.RadioButton
+                        android:id="@+id/newkYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/ic_sl_checkbox"
+                        android:drawablePadding="10dp"
+                        android:text="是"
+                        android:textColor="#8f8f8f"
+                        custom:key="newk"
+                        custom:value="true" />
+
+                    <asuper.yt.cn.supermarket.views.RadioButton
+                        android:id="@+id/newkNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/ic_sl_checkbox"
+                        android:drawablePadding="10dp"
+                        android:text="否"
+                        android:textColor="#8f8f8f"
+                        custom:key="newk"
+                        custom:value="false" />
+                </RadioGroup>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="服务员年龄" />
+
+                <EditText
+                    android:id="@+id/age"
+                    style="@style/newFormStyle_content"
+                    android:inputType="phone"
+                    android:maxLength="2"
+                    android:tag="age" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="商品供应" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/shopping"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="shopping" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="促销频率" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/sales"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="sales" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="服务态度" />
+
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/manner"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="manner" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="网购行为" />
+
+                <LinearLayout style="@style/newFormStyle_content_container">
+
+                    <supermarket.cn.yt.asuper.ytlibrary.widgets.SingleSpinner
+                        android:id="@+id/onlineShopping"
+                        style="@style/newFormStyle_content"
+                        android:hint="请选择"
+                        custom:key="onlineShopping" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_xiala" />
+                </LinearLayout>
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/newFormStyle_container">
+
+                <TextView
+                    style="@style/newFormStyle_label"
+                    android:text="附言" />
+
+                <EditText
+                    android:id="@+id/attchment_describe"
+                    style="@style/newFormStyle_content_large"
+                    android:layout_weight="1" />
+
+                <View style="@style/commonDivider_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/newFormStyle_content_container"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="附件"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/btnUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_sld_prmr_ccl_cn"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="3dp"
+                    android:text="去上传"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fujian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:tag="nocheck">
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+

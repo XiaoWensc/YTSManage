@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sld_wht_rd_cn"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/shop_card_shop_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:text="---"
+                android:textColor="@color/gray_dark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/shop_card_shop_status"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_shop_status"
+                android:drawablePadding="5dp"
+                android:drawableStart="@drawable/ic_checked"
+                android:gravity="center"
+                android:paddingBottom="3dp"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:paddingRight="5dp"
+                android:paddingTop="3dp"
+                android:text="---"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/shop_card_owner_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_item_name"
+                    android:drawablePadding="10dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:singleLine="true"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:text="---"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/shop_card_owner_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_item_phone"
+                    android:drawablePadding="10dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:singleLine="true"
+                    android:paddingTop="5dp"
+                    android:text="---"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/shop_card_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:drawableLeft="@drawable/ic_item_location"
+                    android:drawablePadding="10dp"
+                    android:paddingBottom="5dp"
+                    android:singleLine="true"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:text="---"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content">
+
+                <asuper.yt.cn.supermarket.views.SlantTextView
+                    android:layout_width="80dp"
+                    android:id="@+id/shop_card_local"
+                    android:visibility="invisible"
+                    android:layout_height="80dp" />
+                <CheckBox
+                    android:id="@+id/shop_card_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:visibility="invisible"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:button="@drawable/ic_sl_checkbox" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/shop_card_date_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_white" />
+
+        <TextView
+            android:id="@+id/shop_card_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:text="---"
+            android:textColor="@color/gray_light"
+            android:textSize="14sp" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/root"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:background="@drawable/bg_oper_result_top"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_oper_result_top"
+                android:layout_gravity="center"
+                android:tag="msg1"
+                android:enabled="false"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:text="签到成功"/>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="14sp"
+        android:tag="msg2"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_margin="40dp"
+        android:textColor="#333333"
+        android:text="该客户签到失败"
+        />
+
+    <FrameLayout
+        android:id="@+id/goBack"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+        android:layout_height="40dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:enabled="false"
+        android:background="@drawable/bg_oper_info_btn"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_oper_reslt_btn"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:drawablePadding="10dp"
+            android:text="返回扫描"/>
+    </FrameLayout>
+</LinearLayout>

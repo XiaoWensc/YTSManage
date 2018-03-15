@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/gray_white"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/top"/>
+
+    <LinearLayout
+        android:id="@+id/nav_name"
+        android:visibility="gone"
+        style="@style/FormItem.Full"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            style="@style/clentText"
+            android:drawableLeft="@drawable/ic_person_text"
+            android:drawablePadding="10dp"
+            android:text="修改用户姓名" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_itbt"
+        style="@style/FormItem.Full">
+
+        <TextView
+            style="@style/clentText"
+            android:drawableLeft="@drawable/ic_money_text"
+            android:drawablePadding="10dp"
+            android:text="绑定金融账户" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_phone"
+        style="@style/FormItem.Full">
+
+        <TextView
+            style="@style/clentText"
+            android:drawableLeft="@drawable/ic_phone_text"
+            android:drawablePadding="10dp"
+            android:text="修改手机号码" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_passd"
+        style="@style/FormItem.Full">
+
+        <TextView
+            style="@style/clentText"
+            android:drawableLeft="@drawable/ic_pwd_text"
+            android:drawablePadding="10dp"
+            android:text="修改账户密码" />
+    </LinearLayout>
+</LinearLayout>

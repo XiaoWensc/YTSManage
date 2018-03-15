@@ -1,0 +1,250 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <item name="adapter_item_tag_key" type="id" />
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/gray_white</item>
+        <item name="android:colorBackground">@color/gray_light</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+        <!-- 左边箭头 -->
+        <item name="drawerArrowStyle">@style/left_Drawer_Arrow_Style</item>
+    </style>
+
+    <style name="AppTheme.Slide.Anim" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="windowNoTitle">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">false</item>
+
+    </style>
+    <!-- 左边的箭头指示-->
+    <style name="left_Drawer_Arrow_Style" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.Slide" parent="@style/AppTheme">
+        <!--Required-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/AppTheme.Slide.Animation</item>
+    </style>
+
+    <style name="AppTheme.Slide.Animation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/anim_slide_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/anim_slide_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/anim_slide_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/anim_slide_out</item>
+    </style>
+
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity" mce_bogus="1">
+
+        <item name="android:activityOpenEnterAnimation">@anim/push_left_in</item>
+
+        <item name="android:activityOpenExitAnimation">@anim/push_left_out</item>
+
+        <item name="android:activityCloseEnterAnimation">@anim/push_right_in</item>
+
+        <item name="android:activityCloseExitAnimation">@anim/push_right_out</item>
+
+    </style>
+
+
+    <!-- ToolBar菜单样式 -->
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:titleTextColor" tools:targetApi="m">#ffffff</item>
+        <item name="actionMenuTextColor">#ffffff</item> <!--  敲定颜色-->
+        <item name="android:textSize">14sp</item> <!--  搞掂字体大小-->
+    </style>
+
+    <style name="buttonBarButtonStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- 继承 -->
+    <style name="accountButtonStyle" parent="@style/buttonBarButtonStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">4sp</item>
+        <item name="android:background">@drawable/bg_sld_prmr_ccl_cn</item>
+    </style>
+
+    <style name="FormItem">
+        <item name="android:background">@drawable/slctr_sld_wht_gray</item>
+        <item name="android:elevation" tools:targetApi="lollipop">1px</item>
+        <item name="android:layout_marginBottom">1px</item>
+        <item name="android:textColor">@color/neutral_gray</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="FormItem.Full">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="FormItem.Full.RightArrow">
+        <item name="android:drawableEnd">@drawable/ic_arrow_right</item>
+    </style>
+
+    <style name="accountEditText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:background">#ffffff</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/neutral_gray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="accountInputBorder">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">1px</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="clentText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="newFormStyle_container.join">
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+    </style>
+
+    <style name="newFormStyle_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="newFormStyle_label">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="newFormStyle_content_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="commonDivider_vertical">
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/gray_light</item>
+    </style>
+
+    <style name="commonDivider_horizontal">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/gray_light</item>
+    </style>
+
+
+    <style name="newFormStyle_content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:hint">请填写</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">#999999</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="newFormStyle_content_spinner">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:hint">请填写</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/neutral_gray</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="newFormStyle_content_large">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:hint">请填写</item>
+        <item name="android:background">@drawable/bg_sld_gr_lght_rd_cn</item>
+        <item name="android:textColor">@color/neutral_gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">100dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">top</item>
+    </style>
+
+    <style name="dynamicText">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+
+    <style name="TextStyle_Oper_Info.Text1">
+        <item name="android:textColor">#999999</item>
+    </style>
+    <style name="TextStyle_Oper_Info.Text2">
+        <item name="android:textColor">#333333</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="TextStyle_Oper_Info">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="LayoutStyle_Oper_Info.H">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="LayoutStyle_Oper_Info.V">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="LayoutStyle_Oper_Info">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

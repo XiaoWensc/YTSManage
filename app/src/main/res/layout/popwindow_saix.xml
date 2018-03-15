@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="right">
+
+    <RadioGroup
+        android:id="@+id/ra_group"
+        android:background="@drawable/drop_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/btnAll"
+        android:padding="5dp"
+        android:gravity="center_vertical">
+        <RadioButton
+            android:id="@+id/btnAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/rb_color"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="8dp"
+            android:button="@null"
+            android:text="全部"/>
+        <View
+            android:layout_width="match_parent"
+            android:background="#EBF4FB"
+            android:layout_height="0.5dp"/>
+        <RadioButton
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/rb_color"
+            android:button="@null"
+            android:text="上门拜访"/>
+        <View
+            android:layout_width="match_parent"
+            android:background="#EBF4FB"
+            android:layout_height="0.5dp"/>
+        <RadioButton
+            android:id="@+id/btnPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/rb_color"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="8dp"
+            android:button="@null"
+            android:text="电话拜访"/>
+    </RadioGroup>
+
+</LinearLayout>

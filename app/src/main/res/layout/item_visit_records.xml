@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/item_visit_date"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="2017-01-01\n22:29"
+            android:textColor="@color/gray_light"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/item_visit_icon"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_visit_phone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_visit_item"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:id="@+id/item_visit_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电话拜访"
+            android:textColor="@color/gray_dark"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/item_visit_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:text="电话拜访"
+            android:textColor="#95D0FD"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

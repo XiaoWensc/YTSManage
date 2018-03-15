@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray_white"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/join_auditing_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="详细信息"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="发起人" />
+
+                <TextView
+                    android:id="@+id/join_auditing_openman"
+                    style="@style/accountEditText"
+                    android:minHeight="50dp"
+                    android:singleLine="false"
+                    android:tag="developerName" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="所属公司" />
+
+                <TextView
+                    android:id="@+id/join_auditing_company"
+                    style="@style/accountEditText"
+                    android:minHeight="50dp"
+                    android:singleLine="false"
+                    android:tag="subCompanyName" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="发起时间" />
+
+                <TextView
+                    android:id="@+id/join_auditing_opendate"
+                    style="@style/accountEditText"
+                    android:tag="gmtCreate" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="店铺名称" />
+
+                <TextView
+                    android:id="@+id/join_auditing_shopname"
+                    style="@style/accountEditText"
+                    android:minHeight="50dp"
+                    android:singleLine="false"
+                    android:tag="shopName" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="店铺地址" />
+
+                <TextView
+                    android:id="@+id/join_auditing_shopaddr"
+                    style="@style/accountEditText"
+                    android:minHeight="50dp"
+                    android:singleLine="false"
+                    android:tag="shopAddress" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="实际经营者姓名" />
+
+                <TextView
+                    android:id="@+id/join_auditing_legalname"
+                    style="@style/accountEditText"
+                    android:minHeight="50dp"
+                    android:singleLine="false"
+                    android:tag="realName" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="实际经营者电话号码" />
+
+                <TextView
+                    android:id="@+id/join_auditing_phone"
+                    style="@style/accountEditText"
+                    android:tag="shopPhoneNumber" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="小超编号" />
+
+                <TextView
+                    android:id="@+id/join_auditing_xcode"
+                    style="@style/accountEditText"
+                    android:tag="xcCode" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="金融账号" />
+
+                <TextView
+                    android:id="@+id/join_auditing_finacialaccount"
+                    style="@style/accountEditText"
+                    android:tag="xcFinalName" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="补贴金额" />
+
+                <TextView
+                    android:id="@+id/join_auditing_subsidy"
+                    style="@style/accountEditText"
+                    android:tag="rentAmount" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="补贴类型" />
+
+                <TextView
+                    android:id="@+id/join_auditing_subsidytype"
+                    style="@style/accountEditText"
+                    android:minHeight="50dp"
+                    android:singleLine="false"
+                    android:tag="dataType" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="接入系统" />
+
+                <TextView
+                    android:id="@+id/join_auditing_system"
+                    style="@style/accountEditText"
+                    android:text="是"/>
+            </LinearLayout>
+
+            <LinearLayout style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="接入时间" />
+
+                <TextView
+                    android:id="@+id/join_auditing_connectdate"
+                    style="@style/accountEditText"
+                    android:minHeight="50dp"
+                    android:singleLine="false"
+                    android:tag="accpetTimeString" />
+            </LinearLayout>
+
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/join_auditing_comments_title"
+                android:text="审批意见"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:button="@null"
+                android:layout_marginTop="10dp"
+                android:paddingRight="20dp"
+                android:drawableRight="@drawable/folder_bg"
+                android:textColor="@color/colorPrimary"
+                android:paddingLeft="20dp"
+                android:background="@color/white"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/join_auditing_comments"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="附言" />
+
+            </LinearLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/join_auditing_attachmentdesc"
+                style="@style/accountEditText"
+                android:background="@android:color/white"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:paddingLeft="20dp"
+                android:singleLine="false"
+                android:paddingRight="20dp"
+                android:minHeight="50dp"
+                android:tag="attachmentState" />
+
+            <LinearLayout
+                android:id="@+id/join_auditing_attachment"
+                android:layout_marginTop="10dp"
+                style="@style/accountInputBorder">
+
+                <TextView
+                    style="@style/clentText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="点击查看附件信息"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/mymission_deal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_sld_prmr_ccl_cn"
+        android:layout_margin="10dp"
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+        android:text="处  理"/>
+</LinearLayout>
